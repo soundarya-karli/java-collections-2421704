@@ -1,8 +1,6 @@
 package Collections;
 
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Collection;
+import java.util.*;
 public class App {
     public static void main (String args[]){
         Room cam=new Room("Cambridge","Premiem Room",4,200.000);
@@ -16,12 +14,14 @@ public class App {
          Contract con=new Implementation();
          printTerms(con);
 
-         Collection<String> c=new ArrayList<>();
-         c.add("Music");
-         c.add("Dance");
-         c.add("Reading");
-         c.add("Music");
-         System.out.println(c);
+         Collection<Room> c=new ArrayList<>();
+        // c.add("Music");
+        // c.add("Dance");
+        // c.add("Reading");
+        // c.add("Music");
+         c.add(new Room("Harvard","Duplex",3,200.0));
+        // Collection<String> fav=new HashSet<>(c);
+         c.stream().forEach(i->System.out.println(i.getName()));
     }
     public static double getRevenue(Collection<Room> r){
         return r.stream()
