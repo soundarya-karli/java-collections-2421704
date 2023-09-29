@@ -1,6 +1,7 @@
 package Collections;
 
 import java.util.List;
+import java.util.ArrayList;
 import java.util.Collection;
 public class App {
     public static void main (String args[]){
@@ -10,12 +11,26 @@ public class App {
            Room of=new Room("Oxford","Suite",5,500.00);
           Collection<Room> rooms=List.of(cam,man,LA,of);
          double res=getRevenue(rooms);
-         System.out.println(res);
+        System.out.println(res);
 
+         Contract con=new Implementation();
+         printTerms(con);
+
+         Collection<String> c=new ArrayList<>();
+         c.add("Music");
+         c.add("Dance");
+         c.add("Reading");
+         c.add("Music");
+         System.out.println(c);
     }
     public static double getRevenue(Collection<Room> r){
         return r.stream()
                 .mapToDouble(ro -> ro.getRate())
                 .sum();
+    }
+    private static void printTerms(Contract con){
+        con.term1();
+        con.term2();
+        con.extendedTerm();
     }
 }
