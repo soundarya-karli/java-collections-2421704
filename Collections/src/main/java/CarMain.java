@@ -1,12 +1,10 @@
-package Collections;
-
-public class Car {
+public class CarMain {
     private String make;
     private String model;
     private int mileage;
     
 
-    public Car(String make, String model, int mileage) {
+    public CarMain(String make, String model, int mileage) {
         super();
         this.make = make;
         this.model = model;

@@ -1,21 +1,25 @@
-package Collections;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import org.junit.jupiter.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.BeforeEach;
+
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 
 
-public class CarComparisonTest {
-    Collection <Car> cars;
-    Car honda,tesla,tata;
+public class CarTest {
+    Collection <CarMain> cars;
+    CarMain honda,tesla,tata;
 
     @BeforeEach
     public void setUp(TestInfo info) throws Exception{
         System.out.format("%nPerforming %s%n", info.getTestMethod().get().getName());
         this.cars=new ArrayList<>();
-        this.honda=new Car("Honda","A",40500);
-        this.tesla=new Car("Tesla","X",35000);
-        this.tata=new Car("TATA","S",25000);
+        this.honda=new CarMain("Honda","A",40500);
+        this.tesla=new CarMain("Tesla","X",35000);
+        this.tata=new CarMain("TATA","S",25000);
         this.cars.addAll(Arrays.asList(honda,tesla,tata));
     }
     @AfterEach
@@ -29,18 +33,18 @@ public class CarComparisonTest {
     @Test
     public void removeTest(){
         this.cars.remove(honda);
-        this.cars.remove(new Car("TATA","S",25000));
+        this.cars.remove(new CarMain("TATA","S",25000));
         assertEquals(1,this.cars.size());
     }
     @Test
     public void containsTest(){
-        assertTrue(cars.contains(new Car("Honda","A",40500)));
+        assertTrue(cars.contains(new CarMain("Honda","A",40500)));
         assertTrue(cars.contains(tesla));
         assertTrue(cars.contains(tata));
     }
     @Test
     public void removeAllTest(){
-        this.cars.removeAll(Arrays.asList(honda,tesla,new Car("TATA","S",25000))) ;
+        this.cars.removeAll(Arrays.asList(honda,tesla,new CarMain("TATA","S",25000))) ;
         assertTrue(cars.isEmpty());               
     }
 }
