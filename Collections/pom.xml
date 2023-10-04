@@ -7,7 +7,7 @@
 	<description>Sample Working Files for Learning Java Collections</description>
 
 	<properties>
-		<java.version>11</java.version>
+		<java.version>17</java.version>
 		<maven.compiler.source>11</maven.compiler.source>
     	<maven.compiler.target>11</maven.compiler.target>
 	</properties>
