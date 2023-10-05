@@ -3,14 +3,14 @@ public class Room {
     private String type;
     private int capacity;
     private double rate;
-    private boolean perFriendly;
+    private boolean petFriendly;
 
     public Room(String name, String type, int capacity, double rate){
         this.name=name;
         this.type=type;
         this.capacity=capacity;
         this.rate=rate;
-        setPerFriendly(false);
+        setPetFriendly(false);
     }
     
 
@@ -108,15 +108,15 @@ public class Room {
     /**
      * @return boolean return the perFriendly
      */
-    public boolean isPerFriendly() {
-        return perFriendly;
+    public boolean isPetFriendly() {
+        return petFriendly;
     }
 
     /**
      * @param perFriendly the perFriendly to set
      */
-    public void setPerFriendly(boolean perFriendly) {
-        this.perFriendly = perFriendly;
+    public void setPetFriendly(boolean petFriendly) {
+        this.petFriendly = petFriendly;
     }
 
 }
