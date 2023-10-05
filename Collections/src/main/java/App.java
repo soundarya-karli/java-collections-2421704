@@ -1,6 +1,4 @@
 import java.util.*;
-
-import javax.sql.rowset.Predicate;
 public class App {
     /**
      * @param args
