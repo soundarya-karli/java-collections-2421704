@@ -26,10 +26,11 @@ public class Room {
 
     @Override
     public boolean equals(Object obj) {
+        System.out.format("%nComparing %s with %s%n",this.name,((Room)obj).name);
         if (this == obj)
             return true;
-        if (obj == null)
-            return false;
+        //if (obj == null)
+           // return false;
         if (getClass() != obj.getClass())
             return false;
         Room other = (Room) obj;

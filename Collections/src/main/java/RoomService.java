@@ -1,4 +1,3 @@
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -26,14 +25,14 @@ public class RoomService {
 			r.setRate(r.getRate()-discount);
 		}*/
 		
-		roomInventory.stream().forEach(r->r.setRate(r.getRate()-(discount*r.getRate())));
+		this.roomInventory.forEach(r->r.setRate(r.getRate()-(discount*r.getRate())));
 	}
 
 	public Collection<Room> getRoomsByCapacity(final int requiredCapacity) {
 		
 		//Returns a new collection of rooms that meet or exceed the provided capacity
 		
-		return roomInventory.stream().
+		return this.roomInventory.stream().
 		filter(r->r.getCapacity()>=requiredCapacity).
 		collect(Collectors.toList());
 		

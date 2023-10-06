@@ -8,7 +8,23 @@ public class App {
          Room man=new Room("Manchester","Duplex Room",2,150.00);
           Room LA=new Room("LA","Suite",2,350.00);
            Room of=new Room("Oxford","Suite",5,500.00);
-          Collection<Room> rooms=new ArrayList<>(Arrays.asList(cam,man,LA,of));
+           Room ofDuplicate=new Room("Oxford","Suite",5,500.00);
+          // Set<Room> other=Set.of(LA,cam);
+           //other.add(man);
+           Set<Room> set=new LinkedHashSet<>();
+           set.add(cam);
+           set.add(of);
+           set.add(man);
+           set.add(of);
+           set.add(ofDuplicate);
+           set.add(LA);
+
+           Set<Room> more=Set.copyOf(set);
+           more.stream()
+            .map(r->r.getName())
+            .forEach(System.out::println);
+
+          /*Collection<Room> rooms=new ArrayList<>(Arrays.asList(cam,man,LA,of));
           LA.setPetFriendly(true);
           cam.setPetFriendly(true);
           rooms.stream()
