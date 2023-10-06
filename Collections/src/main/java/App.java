@@ -4,7 +4,16 @@ public class App {
      * @param args
      */
     public static void main (String args[]){
-        Room cam=new Room("Cambridge","Premiem Room",4,200.000);
+        List<Integer> nums=Arrays.asList(50,100,80,500,200,150,20,800);
+        NavigableSet<Integer> numset=new TreeSet<>(nums);
+        numset.subSet(100,500).stream()
+              .forEach(System.out::println);
+
+
+
+
+
+       /* Room cam=new Room("Cambridge","Premiem Room",4,200.000);
          Room man=new Room("Manchester","Duplex Room",2,150.00);
           Room LA=new Room("LA","Suite",2,350.00);
            Room of=new Room("Oxford","Suite",5,500.00);
