@@ -3,7 +3,7 @@ package ThreadDemo1;
 import java.util.Scanner;
 
 class Processor extends Thread{
-    private boolean running=true;
+    private volatile boolean running=true;
     public void run(){
         int i=0;
         while(running){
