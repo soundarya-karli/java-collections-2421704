@@ -2,7 +2,7 @@ package ThreadDemo1;
 
 import java.util.Scanner;
 
-class Processor extends Thread{
+class Processor1 extends Thread{
     private volatile boolean running=true;
     public void run(){
         int i=0;
@@ -22,7 +22,7 @@ class Processor extends Thread{
 }
 public class Syncro {
     public static void main(String args[]){
-        Processor p1=new Processor();
+        Processor1 p1=new Processor1();
         p1.start();
         System.out.println("Press to shutdown..");
         Scanner sc=new Scanner(System.in);
