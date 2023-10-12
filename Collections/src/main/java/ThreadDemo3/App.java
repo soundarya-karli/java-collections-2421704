@@ -2,29 +2,22 @@ package ThreadDemo3;
 
 public class App {
     public static void main(String args[]) throws InterruptedException{
-        final Processor p=new Processor();
+       // final Processor p=new Processor();
+        final Runner r=new Runner();
         Thread t1=new Thread(new Runnable() {
 
             @Override
             public void run() {
-                try {
-                    p.producer();
-                } catch (InterruptedException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
+                // p.producer();
+                   r.first();
                 }
             });
             Thread t2=new Thread(new Runnable() {
 
             @Override
             public void run() {
-                try {
-                    p.consumes();
-                } catch (InterruptedException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
+                //p.consumes();
+                r.second();
                 }
             });
         t1.start();
@@ -32,5 +25,6 @@ public class App {
 
         t1.join();
         t2.join();
+        r.finished();
     }
 }
