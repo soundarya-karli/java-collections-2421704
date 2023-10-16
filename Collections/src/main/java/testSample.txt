@@ -1,1 +1,3 @@
 Welcome to IO Stream Example!
+This is an Example for Buffered Reader.
+To count number of words in file
